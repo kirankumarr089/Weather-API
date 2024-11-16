@@ -1,10 +1,14 @@
 from flask import Flask, request, render_template
 import requests
 import datetime as dt
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+API_key = os.getenv('WEATHER_API_KEY')  #Add API key here
 app = Flask(__name__)
 
-API_key = '4f0bc35c0aead4c85b9e70526aaf9690'
+
 
 def kelvin_to_celsius_fahrenheit(kelvin):
     celsius = kelvin - 273.15
